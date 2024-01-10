@@ -1,6 +1,6 @@
 Resultados del análisis: 
 
-Se encontro que la integridad de todos los archivos en la carpeta PyJ Systems fueron comprometidos ya que al hacer el análisis de los hashes y compararlo se encontro que no coincidían con los que se tenían actualmente.
+Se encontro que la integridad del archivo log.txt fue alterada ya que al hacer el análisis de los hashes y compararlo se encontro que no coincidía con el que está actualmente.
 
 Recomendación:
 
