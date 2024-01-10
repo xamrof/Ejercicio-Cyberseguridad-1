@@ -15,13 +15,11 @@ def obtener_archivos_carpeta(carpeta):
             archivos.append({ "name": archivo, "path": os.path.join(ruta, archivo)})
     return archivos
 
-def calcular_md5sum(ruta_archivo, tamano_bloque=65536):
-    md5 = hashlib.md5()
+def calcular_md5sum(ruta_archivo):
     try:
         with open(ruta_archivo, 'rb') as archivo:
-            for bloque in iter(lambda: archivo.read(tamano_bloque), b''):
-                md5.update(bloque)
-        return md5.hexdigest()
+            md5 = hashlib.md5(archivo.read()).hexdigest()    
+        return md5
     except FileNotFoundError:
         print(f"Error: El archivo '{ruta_archivo}' no se encontró.")
         return None
@@ -32,7 +30,6 @@ def calcular_md5sum(ruta_archivo, tamano_bloque=65536):
 if __name__ == '__main__':
     ruta_carpeta  = input("Ingrese la ruta de la carpeta: ")
     archivos = obtener_archivos_carpeta(ruta_carpeta)
-    print(archivos)
     for archivo in archivos:
         ruta_archivo = archivo["path"]
         nombre_archivo = archivo["name"]
@@ -45,4 +42,4 @@ if __name__ == '__main__':
                     else:
                         print(f"El hash MD5 del archivo '{nombre_archivo}' es incorrecto. el archivo fue alterado")
                     break
-            # print(f"El hash MD5 del archivo '{nombre_archivo}' es: {hash_md5} ")
+                    

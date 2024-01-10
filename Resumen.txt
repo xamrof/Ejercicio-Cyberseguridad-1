@@ -1,0 +1,7 @@
+Resultados del análisis: 
+
+Se encontro que la integridad de todos los archivos en la carpeta PyJ Systems fueron comprometidos ya que al hacer el análisis de los hashes y compararlo se encontro que no coincidían con los que se tenían actualmente.
+
+Recomendación:
+
+Se creo un pequeño script que análiza los hash que se encuentran en backup, y que comparan con los que tiene cada archivo 
